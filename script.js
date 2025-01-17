@@ -302,4 +302,3 @@ document.addEventListener('DOMContentLoaded', function() {
     gtag('config', 'UA-XXXXXXXX-X');
 });
 
-

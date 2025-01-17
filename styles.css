@@ -165,4 +165,13 @@
     }
 }
 
+#home .absolute img {
+    filter: brightness(0.6) contrast(1.2);
+    transform: scale(1.02);
+    transition: all 0.5s ease-in-out;
+}
+
+#home:hover .absolute img {
+    transform: scale(1.05);
+}
 
