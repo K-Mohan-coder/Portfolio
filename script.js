@@ -193,9 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     easterEggTrigger.className = 'fixed top-4 left-4 w-8 h-8 bg-transparent cursor-pointer z-50';
     document.body.appendChild(easterEggTrigger);
 
-    easterEggTrigger.addEventListener('click', () => {
-        alert('You found the Easter egg! Here's a fun fact: The first computer bug was an actual bug - a moth trapped in a relay of the Harvard Mark II computer in 1947!');
-    });
+   
 
     // Dark/Light mode toggle
     const modeToggle = document.createElement('button');
