@@ -1,1 +1,269 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohan K - Software Developer Portfolio</title>
+    <meta name="description" content="Mohan K is a software developer transforming ideas into seamless digital solutions. Explore his projects, skills, and experience.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#36454F',
+                        gunmetal: '#2C3539',
+                        gold: '#FFD700',
+                        silver: '#C0C0C0',
+                        teal: '#008080',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-roboto">
+    <div id="custom-cursor"></div>
+    <header>
+        <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 transition-all duration-300">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="#home" class="text-2xl font-playfair font-bold text-gold">MK</a>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#about" class="hover:text-gold transition-colors">About</a></li>
+                    <li><a href="#skills" class="hover:text-gold transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-gold transition-colors">Projects</a></li>
+                    <li><a href="#certifications" class="hover:text-gold transition-colors">Certifications</a></li>
+                    <li><a href="#experience" class="hover:text-gold transition-colors">Experience</a></li>
+                    <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-black bg-opacity-90 z-40">
+            <ul class="py-4 px-6 space-y-4">
+                <li><a href="#about" class="block hover:text-gold transition-colors">About</a></li>
+                <li><a href="#skills" class="block hover:text-gold transition-colors">Skills</a></li>
+                <li><a href="#projects" class="block hover:text-gold transition-colors">Projects</a></li>
+                <li><a href="#certifications" class="block hover:text-gold transition-colors">Certifications</a></li>
+                <li><a href="#experience" class="block hover:text-gold transition-colors">Experience</a></li>
+                <li><a href="#contact" class="block hover:text-gold transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <div class="text-center z-10">
+                <h1 class="text-6xl md:text-8xl font-playfair font-bold mb-4 glowing-text">Mohan K</h1>
+                <p class="text-xl md:text-2xl text-silver mb-8">Transforming ideas into seamless digital solutions</p>
+                <a href="#contact" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-80 transition-all duration-300">Get in Touch</a>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-charcoal to-black opacity-50"></div>
+            <div id="particles-js" class="absolute inset-0"></div>
+        </section>
+
+        <section id="about" class="py-20 bg-charcoal">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="/placeholder.svg?height=400&width=300" alt="Mohan K" class="rounded-lg shadow-lg mx-auto">
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <p class="text-lg mb-6">
+                            Hello! I'm Mohan, a passionate software developer with a knack for turning complex problems into elegant solutions. With a strong foundation in computer science and years of hands-on experience, I specialize in creating robust and scalable applications that make a difference.
+                        </p>
+                        <p class="text-lg mb-6">
+                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good book on software architecture. I believe in continuous learning and staying ahead of the curve in this ever-evolving tech landscape.
+                        </p>
+                        <div class="flex justify-center md:justify-start space-x-6">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-opacity-80 transition-colors">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-opacity-80 transition-colors">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 bg-gradient-to-b from-black to-charcoal">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Programming Languages</h3>
+                        <div class="space-y-4">
+                            <div class="skill-bar" data-skill="JavaScript" data-percentage="90"></div>
+                            <div class="skill-bar" data-skill="Python" data-percentage="85"></div>
+                            <div class="skill-bar" data-skill="Java" data-percentage="80"></div>
+                            <div class="skill-bar" data-skill="C++" data-percentage="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Web Technologies</h3>
+                        <div class="space-y-4">
+                            <div class="skill-bar" data-skill="React" data-percentage="95"></div>
+                            <div class="skill-bar" data-skill="Node.js" data-percentage="88"></div>
+                            <div class="skill-bar" data-skill="HTML/CSS" data-percentage="92"></div>
+                            <div class="skill-bar" data-skill="GraphQL" data-percentage="78"></div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Tools & Frameworks</h3>
+                        <div class="space-y-4">
+                            <div class="skill-bar" data-skill="Git" data-percentage="90"></div>
+                            <div class="skill-bar" data-skill="Docker" data-percentage="85"></div>
+                            <div class="skill-bar" data-skill="AWS" data-percentage="80"></div>
+                            <div class="skill-bar" data-skill="TensorFlow" data-percentage="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-gunmetal">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Projects</h2>
+                <div class="project-carousel">
+                    <div class="project-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">AI-Powered Task Manager</h3>
+                            <p class="text-gray-300 mb-4">A smart task management application that uses machine learning to prioritize and categorize tasks.</p>
+                            <div class="flex justify-between">
+                                <a href="#" class="text-gold hover:underline">Live Demo</a>
+                                <a href="#" class="text-gold hover:underline">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Project 2" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Blockchain Voting System</h3>
+                            <p class="text-gray-300 mb-4">A secure and transparent voting system built on blockchain technology for organizational decision-making.</p>
+                            <div class="flex justify-between">
+                                <a href="#" class="text-gold hover:underline">Live Demo</a>
+                                <a href="#" class="text-gold hover:underline">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Real-time Collaboration Tool</h3>
+                            <p class="text-gray-300 mb-4">A web-based platform for real-time document editing and team collaboration with video conferencing.</p>
+                            <div class="flex justify-between">
+                                <a href="#" class="text-gold hover:underline">Live Demo</a>
+                                <a href="#" class="text-gold hover:underline">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="certification-card">
+                        <img src="/placeholder.svg?height=200&width=200" alt="freeCodeCamp Certification" class="w-32 h-32 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-center">Full Stack Web Development</h3>
+                        <p class="text-gray-300 text-center">freeCodeCamp</p>
+                    </div>
+                    <div class="certification-card">
+                        <img src="/placeholder.svg?height=200&width=200" alt="Skillsoft Certification" class="w-32 h-32 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-center">Advanced JavaScript</h3>
+                        <p class="text-gray-300 text-center">Skillsoft</p>
+                    </div>
+                    <div class="certification-card">
+                        <img src="/placeholder.svg?height=200&width=200" alt="AWS Certification" class="w-32 h-32 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-center">AWS Certified Developer</h3>
+                        <p class="text-gray-300 text-center">Amazon Web Services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 bg-gradient-to-b from-charcoal to-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold mb-2">Senior Software Engineer</h3>
+                            <p class="text-gold mb-2">TechCorp Inc. | 2020 - Present</p>
+                            <p class="text-gray-300">Led the development of a microservices-based e-commerce platform, improving scalability and reducing downtime by 40%.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold mb-2">Full Stack Developer</h3>
+                            <p class="text-gold mb-2">InnoSoft Solutions | 2017 - 2020</p>
+                            <p class="text-gray-300">Developed and maintained multiple web applications using React, Node.js, and MongoDB, serving over 100,000 daily active users.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold mb-2">Junior Developer</h3>
+                            <p class="text-gold mb-2">StartUp Innovations | 2015 - 2017</p>
+                            <p class="text-gray-300">Contributed to the development of a mobile app for local businesses, which gained over 50,000 downloads in its first year.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gunmetal">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Get in Touch</h2>
+                <form id="contact-form" class="max-w-lg mx-auto">
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-3 py-2 text-gray-300 bg-charcoal rounded-md focus:outline-none focus:ring-2 focus:ring-gold">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-2 text-gray-300 bg-charcoal rounded-md focus:outline-none focus:ring-2 focus:ring-gold">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 text-gray-300 bg-charcoal rounded-md focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gold text-black font-bold py-2 px-4 rounded-md hover:bg-opacity-80 transition-colors duration-300">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300">&copy; 2025 Mohan K. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
