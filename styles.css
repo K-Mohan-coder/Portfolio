@@ -52,7 +52,6 @@
 
 .project-card {
     flex: 0 0 auto;
-    width: 300px;
     margin-right: 20px;
     scroll-snap-align: start;
     background-color: #2C3539;

@@ -117,43 +117,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 16);
     }
 
-    const counters = [
-        { id: 'projects-completed', target: 50 },
-        { id: 'hours-coded', target: 5000 },
-        { id: 'technologies-mastered', target: 15 }
-    ];
+    // const counters = [
+    //     { id: 'projects-completed', target: 50 },
+    //     { id: 'hours-coded', target: 5000 },
+    //     { id: 'technologies-mastered', target: 15 }
+    // ];
 
-    const counterSection = document.createElement('section');
-    counterSection.id = 'counters';
-    counterSection.className = 'py-20 bg-charcoal';
-    counterSection.innerHTML = `
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                ${counters.map(counter => `
-                    <div class="text-center">
-                        <h3 class="text-4xl font-bold text-gold mb-2" id="${counter.id}">0</h3>
-                        <p class="text-xl text-gray-300">${counter.id.replace(/-/g, ' ').replace(/^\w/, c => c.toUpperCase())}</p>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
+    // const counterSection = document.createElement('section');
+    // counterSection.id = 'counters';
+    // counterSection.className = 'py-20 bg-charcoal';
+    // counterSection.innerHTML = `
+    //     <div class="container mx-auto px-6">
+    //         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    //             ${counters.map(counter => `
+    //                 <div class="text-center">
+    //                     <h3 class="text-4xl font-bold text-gold mb-2" id="${counter.id}">0</h3>
+    //                     <p class="text-xl text-gray-300">${counter.id.replace(/-/g, ' ').replace(/^\w/, c => c.toUpperCase())}</p>
+    //                 </div>
+    //             `).join('')}
+    //         </div>
+    //     </div>
+    // `;
 
-    document.querySelector('#experience').insertAdjacentElement('afterend', counterSection);
+    // document.querySelector('#experience').insertAdjacentElement('afterend', counterSection);
 
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                counters.forEach(counter => {
-                    const element = document.getElementById(counter.id);
-                    animateCounter(element, counter.target, 2000);
-                });
-                counterObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    // const counterObserver = new IntersectionObserver((entries) => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             counters.forEach(counter => {
+    //                 const element = document.getElementById(counter.id);
+    //                 animateCounter(element, counter.target, 2000);
+    //             });
+    //             counterObserver.unobserve(entry.target);
+    //         }
+    //     });
+    // }, { threshold: 0.5 });
 
-    counterObserver.observe(document.getElementById('counters'));
+    // counterObserver.observe(document.getElementById('counters'));
 
     // 3D Rotating cube
     const scene = new THREE.Scene();
