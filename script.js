@@ -37,13 +37,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Skill bar animation
-    const skillBars = document.querySelectorAll('.skill-bar');
-    const animateSkillBars = () => {
-        skillBars.forEach(bar => {
-            const percentage = bar.getAttribute('data-percentage');
-            bar.style.width = `${percentage}%`;
+   // JavaScript for rendering skill bars dynamically
+    document.addEventListener('DOMContentLoaded', () => {
+        const skillBars = document.querySelectorAll('.skill-bar');
+
+        skillBars.forEach(skillBar => {
+            const skillName = skillBar.getAttribute('data-skill');
+            const percentage = skillBar.getAttribute('data-percentage');
+
+            // Create the container and label
+            const skillContainer = document.createElement('div');
+            skillContainer.classList.add('relative', 'w-full', 'h-7', 'bg-gray-700', 'rounded-full', 'overflow-hidden');
+
+            const skillLabel = document.createElement('span');
+            skillLabel.textContent = `${skillName} - ${percentage}%`;
+            skillLabel.classList.add('absolute', 'left-2', 'top-1/2', '-translate-y-1/2', 'text-sm', 'font-semibold', 'text-white', 'z-10');
+
+            // Create the progress bar
+            const progressBar = document.createElement('div');
+            progressBar.style.width = `${percentage}%`;
+            progressBar.classList.add('absolute', 'top-0', 'left-0', 'h-full', 'bg-gradient-to-r', 'from-green-400', 'to-green-600');
+
+            // Append label and progress bar to container
+            skillContainer.appendChild(skillLabel);
+            skillContainer.appendChild(progressBar);
+
+            // Add the skill bar to the DOM
+            skillBar.appendChild(skillContainer);
         });
-    };
+    });
 
     // Animate skill bars when they come into view
     const observer = new IntersectionObserver((entries) => {
@@ -60,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Custom cursor
-    const cursor = document.getElementById('custom-cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
+    // const cursor = document.getElementById('custom-cursor');
+    // document.addEventListener('mousemove', (e) => {
+    //     cursor.style.left = e.clientX + 'px';
+    //     cursor.style.top = e.clientY + 'px';
+    // });
 
     // Project carousel
     const carousel = document.querySelector('.project-carousel');
@@ -117,43 +139,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 16);
     }
 
-    // const counters = [
-    //     { id: 'projects-completed', target: 50 },
-    //     { id: 'hours-coded', target: 5000 },
-    //     { id: 'technologies-mastered', target: 15 }
-    // ];
+    const counters = [
+        { id: 'projects-completed', target: 50 },
+        { id: 'hours-coded', target: 5000 },
+        { id: 'technologies-mastered', target: 15 }
+    ];
 
-    // const counterSection = document.createElement('section');
-    // counterSection.id = 'counters';
-    // counterSection.className = 'py-20 bg-charcoal';
-    // counterSection.innerHTML = `
-    //     <div class="container mx-auto px-6">
-    //         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    //             ${counters.map(counter => `
-    //                 <div class="text-center">
-    //                     <h3 class="text-4xl font-bold text-gold mb-2" id="${counter.id}">0</h3>
-    //                     <p class="text-xl text-gray-300">${counter.id.replace(/-/g, ' ').replace(/^\w/, c => c.toUpperCase())}</p>
-    //                 </div>
-    //             `).join('')}
-    //         </div>
-    //     </div>
-    // `;
+    const counterSection = document.createElement('section');
+    counterSection.id = 'counters';
+    counterSection.className = 'py-20 bg-charcoal';
+    counterSection.innerHTML = `
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                ${counters.map(counter => `
+                    <div class="text-center">
+                        <h3 class="text-4xl font-bold text-gold mb-2" id="${counter.id}">0</h3>
+                        <p class="text-xl text-gray-300">${counter.id.replace(/-/g, ' ').replace(/^\w/, c => c.toUpperCase())}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
 
-    // document.querySelector('#experience').insertAdjacentElement('afterend', counterSection);
+    document.querySelector('#experience').insertAdjacentElement('afterend', counterSection);
 
-    // const counterObserver = new IntersectionObserver((entries) => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             counters.forEach(counter => {
-    //                 const element = document.getElementById(counter.id);
-    //                 animateCounter(element, counter.target, 2000);
-    //             });
-    //             counterObserver.unobserve(entry.target);
-    //         }
-    //     });
-    // }, { threshold: 0.5 });
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                counters.forEach(counter => {
+                    const element = document.getElementById(counter.id);
+                    animateCounter(element, counter.target, 2000);
+                });
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
 
-    // counterObserver.observe(document.getElementById('counters'));
+    counterObserver.observe(document.getElementById('counters'));
 
     // 3D Rotating cube
     const scene = new THREE.Scene();
@@ -180,13 +202,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     camera.position.z = 5;
 
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-    animate();
+    // function animate() {
+    //     requestAnimationFrame(animate);
+    //     cube.rotation.x += 0.01;
+    //     cube.rotation.y += 0.01;
+    //     renderer.render(scene, camera);
+    // }
+    // animate();
 
     // Easter egg
     const easterEggTrigger = document.createElement('div');

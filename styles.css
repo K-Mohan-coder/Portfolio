@@ -172,3 +172,89 @@
     transform: scale(1.05);
 }
 
+    .skill-container {
+        width: 100%;
+        background: linear-gradient(to right, #838282, #22201b); /* Elegant gradient */
+        border-radius: 0.5rem;
+        overflow: hidden;
+        position: relative;
+        height: 1.5rem;
+    }
+
+    .skill-bar {
+        height: 100%;
+        position: relative;
+        text-align: left;
+        color: #fff;
+        font-weight: bold;
+        padding-left: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    
+
+    .skill-bar[data-skill="JavaScript"] {
+        width: 90%;
+    }
+
+    .skill-bar[data-skill="Python"] {
+        width: 85%;
+    }
+
+    .skill-bar[data-skill="Java"] {
+        width: 80%;
+    }
+
+    .skill-bar[data-skill="C++"] {
+        width: 75%;
+    }
+
+    .skill-bar[data-skill="React"] {
+        width: 95%;
+    }
+
+    .skill-bar[data-skill="Node.js"] {
+        width: 88%;
+    }
+
+    .skill-bar[data-skill="HTML/CSS"] {
+        width: 92%;
+    }
+
+    .skill-bar[data-skill="sql"] {
+        width: 78%;
+    }
+
+    .skill-bar[data-skill="Git"] {
+        width: 90%;
+    }
+
+    .skill-bar[data-skill="Docker"] {
+        width: 85%;
+    }
+
+    .skill-bar[data-skill="AWS"] {
+        width: 80%;
+    }
+
+    .skill-bar[data-skill="TensorFlow"] {
+        width: 75%;
+    }
+
+    .skill-bar[data-skill="SQL"] {
+        width: 90%;
+    }
+    
+    .skill-bar[data-skill="PHP"] {
+        width: 85%;
+    }
+    
+    .skill-bar[data-skill="MySQL"] {
+        width: 80%;
+    }
+    
+    .skill-bar[data-skill="MongoDB"] {
+        width: 75%;
+    }
+    
