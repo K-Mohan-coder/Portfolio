@@ -116,24 +116,30 @@ document.addEventListener('DOMContentLoaded', function() {
         carousel.scrollLeft = scrollLeft - walk;
     });
 
-  // Initialize EmailJS with your user ID
-emailjs.init("kmohan17offcial@gmail.com");
+// Initialize EmailJS with your user ID
+emailjs.init("ZsUORlPyZTY-i7Ig0");
 
-// Form submission
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
+// Button submission
+const submitButton = document.getElementById('submit-button');
+debugger
+submitButton.addEventListener('click', (e) => {
     e.preventDefault();
+    
+    const contactForm = document.getElementById('contact-form');
     
     // Send form data to your email using EmailJS
     emailjs.sendForm('service_n41ltbe', 'template_1sn0z3c', contactForm)
         .then((response) => {
+            // Display success message
             alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+            contactForm.reset();  // Reset form fields after successful submission
         })
         .catch((error) => {
+            // Display error message if there's an issue
             alert('Sorry, there was an error sending your message. Please try again later.');
         });
 });
+
 
 
     // Dynamic counter
