@@ -116,14 +116,25 @@ document.addEventListener('DOMContentLoaded', function() {
         carousel.scrollLeft = scrollLeft - walk;
     });
 
-    // Form submission
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Here you would typically send the form data to a server
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
+  // Initialize EmailJS with your user ID
+emailjs.init("kmohan17offcial@gmail.com");
+
+// Form submission
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Send form data to your email using EmailJS
+    emailjs.sendForm('service_n41ltbe', 'template_1sn0z3c', contactForm)
+        .then((response) => {
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        })
+        .catch((error) => {
+            alert('Sorry, there was an error sending your message. Please try again later.');
+        });
+});
+
 
     // Dynamic counter
     function animateCounter(element, target, duration) {
