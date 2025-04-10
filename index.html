@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Inside <head> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
@@ -216,135 +218,152 @@
         </section>
 
         <section id="projects" class="py-20 bg-gunmetal">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Projects</h2>
-                <hr><br>
-                <br>
-
-        
-                <!-- Home Automation using IoT Project -->
-                <div class="project-card">
+            <!-- <div class="container mx-auto px-6"> -->
+              <h2 class="text-4xl font-playfair font-bold mb-12 text-center text-white">Projects</h2>
+              <hr class="border-gray-600 mb-6">
+          
+              <!-- Swiper -->
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+          
+                  <!-- Project 1 -->
+                  <div class="swiper-slide bg-white rounded-3xl shadow-lg w-[22rem]">
                     <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-01-16%20at%201.40.36%20PM-Vk70crsLXFk1eu74xBEzbN6vXMJXyW.jpeg" 
-                        alt="Mohan presenting at a tech conference" class="w-full object-cover" 
-                        style="height: 20rem; border-bottom-right-radius: 1.5rem; border-top-left-radius: 1.5rem;">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Home Automation using IoT</h3>
-                        <ul>
-                            <li><strong>Project Title:</strong> Home Automation using IoT</li>
-                            <li><strong>Technologies Used:</strong> ESP8266 microchip, Relay Modules, Arduino IDE, Sensors, Actuators</li>
-                            <li><strong>Role:</strong> Team Lead</li>
-                            <li><strong>Key Contributions:</strong>
-                                <ul>
-                                    <li>Led the development of a cutting-edge home automation system.</li>
-                                    <li>Utilized ESP8266 microchip and relay modules to enable remote control of household appliances and lighting.</li>
-                                    <li>Enhanced user convenience and energy efficiency through smart integration of sensors, actuators, and smart devices.</li>
-                                    <li>Oversaw seamless integration of multiple hardware components ensuring robust functionality.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Achievements:</strong>
-                                <ul>
-                                    <li>Successfully presented the project live on a TV show to an audience of 10k viewers.</li>
-                                    <li>Demonstrated the potential of the IoT-driven system to revolutionize modern living.</li>
-                                    <li>Showcased ability to lead a team and communicate complex technical concepts to a large audience.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Impact:</strong>
-                                <ul>
-                                    <li>Project demonstrated the transformative power of IoT in home automation, showcasing practical real-world applications.</li>
-                                    <li>Strengthened public speaking and technical demonstration skills by presenting to 10k viewers.</li>
-                                </ul>
-                            </li>
-                            <li><strong><u>LinkedIn Project Link:</strong> <a href="https://www.linkedin.com/in/mohan-k-a78182312/details/projects/?profileUrn=urn%3Ali%3Afsd_profile%3AACoAAE9nR3wBWX147vctFwc7GfG8H5B9xHrp-x0" target="_blank">View Full Project</u></a></li>
-                        </ul>
+                         alt="Home Automation IoT"
+                         class="w-full h-60 object-cover rounded-tl-3xl rounded-br-3xl">
+                    <div class="p-6-dark">
+                      <h3 class="text-xl font-bold mb-2">Home Automation using IoT</h3>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li><strong>Technologies:</strong> ESP8266, Relay Modules, Arduino IDE</li>
+                        <li><strong>Role:</strong> Team Lead</li>
+                        <li><strong>Key:</strong> Remote control, sensor integration, TV demo</li>
+                        <li><a href="https://www.linkedin.com/in/mohan-k-a78182312/details/projects/?profileUrn=urn%3Ali%3Afsd_profile%3AACoAAE9nR3wBWX147vctFwc7GfG8H5B9xHrp-x0" target="_blank" class="text-blue-600 underline">View Full Project</a></li>
+                      </ul>
                     </div>
-                </div>
-        
-                <br>
-        
-                <!-- PayTrack Project -->
-                <div class="project-card">
+                  </div>
+          
+                  <!-- Project 2 -->
+                  <div class="swiper-slide bg-white rounded-3xl shadow-lg w-[22rem]">
                     <img src="assets/Untitled design.png" 
-                        alt="PayTrack - Personal Expense Manager" class="w-full object-cover" 
-                        style="height: 20rem; border-bottom-right-radius: 1.5rem; border-top-left-radius: 1.5rem;">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">PayTrack – Personal Expense Manager</h3>
-                        <ul>
-                            <li><strong>Project Title:</strong> PayTrack – Personal Expense Manager</li>
-                            <li><strong>Technologies Used:</strong> Kotlin, Jetpack Compose, Room Database, Firebase, WorkManager</li>
-                            <li><strong>Role:</strong> Team Lead</li>
-                            <li><strong>Key Contributions:</strong>
-                                <ul>
-                                    <li>Developed an intuitive mobile app to help users track income, expenses, and budgets efficiently.</li>
-                                    <li>Designed a **modern UI with Jetpack Compose**, ensuring smooth navigation and a user-friendly experience.</li>
-                                    <li>Implemented **Room Database** for offline transaction storage and **Firebase** for cloud backup & multi-device sync.</li>
-                                    <li>Created **budget-setting features with alerts** to help users avoid overspending.</li>
-                                    <li>Integrated **WorkManager** to schedule automated bill payment reminders for users.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Achievements:</strong>
-                                <ul>
-                                    <li>Successfully presented PayTrack at my college **project viva**, receiving valuable feedback and appreciation.</li>
-                                    <li>Enhanced my **Android development skills**, learning real-world applications of mobile app development.</li>
-                                    <li>Improved my ability to explain complex technical concepts through a structured presentation.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Impact:</strong>
-                                <ul>
-                                    <li>Empowered users to **gain financial control** through structured tracking and analysis.</li>
-                                    <li>Demonstrated **practical applications of Android development**, including database management, UI/UX, and automation.</li>
-                                    <li>Improved my confidence in **public speaking and technical demonstrations**.</li>
-                                </ul>
-                            </li>
-                            <li><strong><u>LinkedIn Project Link:</strong> <a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_projectpresentation-collegeviva-paytrack-activity-7305596355769450496-sBMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9nR3wBWX147vctFwc7GfG8H5B9xHrp-x0" target="_blank">View Full Project</u></a></li>
-                        </ul>
+                         alt="PayTrack"
+                         class="w-full h-60 object-cover rounded-tl-3xl rounded-br-3xl">
+                    <div class="p-6-dark">
+                      <h3 class="text-xl font-bold mb-2">PayTrack – Expense Manager</h3>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li><strong>Technologies:</strong> Kotlin, Firebase, Jetpack Compose</li>
+                        <li><strong>Role:</strong> Team Lead</li>
+                        <li><strong>Key:</strong> Budget alerts, cloud sync, reminders</li>
+                        <li><a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_projectpresentation-collegeviva-paytrack-activity-7305596355769450496-sBMZ" target="_blank" class="text-blue-600 underline">View Full Project</a></li>
+                      </ul>
                     </div>
+                  </div>
+          
+                  <!-- Add More Projects -->
+                  <!-- Just copy and paste swiper-slide blocks -->
+          
                 </div>
-        
+          
+                <!-- Optional navigation buttons -->
+                <div class="swiper-button-next text-white"></div>
+                <div class="swiper-button-prev text-white"></div>
+              </div>
             </div>
-        </section>
-        
+          </section>
 
 
-        <section id="certifications" class="py-20 bg-black">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Certifications</h2>
-                <hr><br>
-                <br>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="certification-card">
-                        <img src="assets/fcc.png" alt="freeCodeCamp Certification" class="h-32 mx-auto mb-4">
-                        <h3 class="text-xl font-bold mb-2 text-center">Full Stack Web Development</h3>
-                        <p class="text-gray-300 text-center">freeCodeCamp</p>
-                        <p class="text-gray-400 text-center">
-                            Successfully completed a comprehensive Full Stack Web Development program that covered HTML, CSS, JavaScript, and backend development. Gained hands-on experience in building responsive and dynamic web applications.
-                        </p>
-                        <p class="text-blue-500 text-center">
-                            <a href="https://www.freecodecamp.org/certification/fccb171fd7c-51f2-43dc-aaa5-0ec7c59ecb53/full-stack" target="_blank">View Certificate</a>
-                        </p>
-                    </div>
-                    <div class="certification-card">
-                        <img src="assets/skillsoft.png?height=200&width=200" alt="Skillsoft Certification" class="h-32 mx-auto mb-4">
-                        <h3 class="text-xl font-bold mb-2 text-center">API Development: Framework Security</h3>
-                        <p class="text-gray-300 text-center">SkillSoft</p>
-                        <p class="text-gray-400 text-center">
-                            I completed the API Development: Framework Security course on Skillsoft, learning to design secure APIs, implement authentication, and protect against vulnerabilities. This course enhanced my skills in integrating robust security within development frameworks, ensuring reliable and safe applications.                        </p>
-                        <p class="text-blue-500 text-center">
-                            <a href="https://skillsoft.digitalbadges.skillsoft.com/6a1ffbca-3392-4c81-9831-935256bcbf62#acc.jS6Z9wGK" target="_blank">View Certificate</a>
-                        </p>                    </div>
-                    <div class="certification-card">
-                        <img src="assets/tcsdm.png?height=200&width=200" alt="TCS Master Data Management" class="h-32 mx-auto mb-4">
-                        <h3 class="text-xl font-bold mb-2 text-center text-white">Master Data Management</h3>
-                        <p class="text-gray-300 text-center">TCS iON</p>
-                        <p class="text-gray-400 text-center">
-                            Completed the "Master Data Management for Beginners" course, which covered data sharing, data management basics, and collaboration across teams to ensure data consistency and accessibility.
-                        </p>
-                        <p class="text-blue-500 text-center">
-                            <a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_master-data-management-issuer-tcs-ion-activity-7283824085556424704-3fmm?utm_source=share&utm_medium=member_desktop" target="_blank">View Certificate</a>
-                        </p>                  
-                     </div>
-                </div>
-            </div>
-        </section>
+<section id="certifications" class="py-20 bg-black">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-playfair font-bold mb-12 text-center text-white">Certifications</h2>
+    <hr class="border-gray-600 mb-10">
+
+    <!-- Scrollable Row of Cards -->
+    <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6">
+
+      <!-- freeCodeCamp Certification -->
+      <div class="min-w-[250px] min-h-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow snap-start flex flex-col justify-between">
+        <img src="assets/fcc.png" alt="freeCodeCamp Certification" class="h-20 w-auto mx-auto mb-2">
+        <h3 class="text-lg font-bold text-center text-white">Full Stack Web Development</h3>
+        <p class="text-sm text-gray-300 text-center">freeCodeCamp</p>
+        <p class="text-xs text-gray-400 text-center mt-1">
+          HTML, CSS, JavaScript, backend projects.
+        </p>
+        <p class="text-blue-500 text-xs text-center mt-2">
+          <a href="https://www.freecodecamp.org/certification/fcc7670e56d-a3e6-43cf-af1c-5490509d2e3b/responsive-web-design" target="_blank">View Certificate</a>
+        </p>
+      </div>
+
+      <!-- Skillsoft Certification -->
+      <div class="min-w-[250px] min-h-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow snap-start flex flex-col justify-between">
+        <img src="assets/skillsoft.png" alt="Skillsoft Certification" class="h-20 w-auto mx-auto mb-2">
+        <h3 class="text-lg font-bold text-center text-white">API Framework Security</h3>
+        <p class="text-sm text-gray-300 text-center">SkillSoft</p>
+        <p class="text-xs text-gray-400 text-center mt-1">
+          Securing APIs & backend integration.
+        </p>
+        <p class="text-blue-500 text-xs text-center mt-2">
+          <a href="https://skillsoft.digitalbadges.skillsoft.com/6a1ffbca-3392-4c81-9831-935256bcbf62#acc.jS6Z9wGK" target="_blank">View Certificate</a>
+        </p>
+      </div>
+
+      <!-- TCS iON Certification -->
+      <div class="min-w-[250px] min-h-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow snap-start flex flex-col justify-between">
+        <img src="assets/tcsdm.png" alt="TCS iON Certification" class="h-20 w-auto mx-auto mb-2">
+        <h3 class="text-lg font-bold text-center text-white">Master Data Management</h3>
+        <p class="text-sm text-gray-300 text-center">TCS iON</p>
+        <p class="text-xs text-gray-400 text-center mt-1">
+          Data consistency & collaboration skills.
+        </p>
+        <p class="text-blue-500 text-xs text-center mt-2">
+          <a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_master-data-management-issuer-tcs-ion-activity-7283824085556424704-3fmm?utm_source=share&utm_medium=member_desktop" target="_blank">View Certificate</a>
+        </p>
+      </div>
+
+      <!-- NM Certificate 1 -->
+      <div class="min-w-[250px] min-h-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow snap-start flex flex-col justify-between">
+        <img src="assets/Screenshot 2025-04-10 at 7.39.01 PM.png" alt="NM Certificate 1" class="h-20 w-auto mx-auto mb-2">
+        <h3 class="text-lg font-bold text-center text-white">Communication Assessment</h3>
+        <p class="text-sm text-gray-300 text-center">CAMBRIDGE</p>
+        <p class="text-xs text-gray-400 text-center mt-1">
+            Overview of English Language Communication
+        </p>
+        <p class="text-blue-500 text-xs text-center mt-2">
+          <a href="assets/NM_Certificate.pdf" target="_blank">View Certificate</a>
+        </p>
+      </div>
+
+      <!-- NM Certificate 2 -->
+      <div class="min-w-[250px] min-h-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow snap-start flex flex-col justify-between">
+        <img src="assets/Screenshot 2025-04-10 at 7.42.32 PM.png" alt="NM Certificate 2" class="h-20 w-auto mx-auto mb-2">
+        <h3 class="text-lg font-bold text-center text-white">Multimedia Training Certificate</h3>
+        <p class="text-sm text-gray-300 text-center">Smart Internz</p>
+        <p class="text-xs text-gray-400 text-center mt-1">
+        Completed a government-sponsored tech program, demonstrating initiative and commitment to career advancement.
+        </p>
+        <p class="text-blue-500 text-xs text-center mt-2">
+          <a href="assets/NM_Certificate (1).pdf" target="_blank">View Certificate</a>
+        </p>
+      </div>
+
+      <!-- NM Certificate 3 -->
+      <div class="min-w-[250px] min-h-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow snap-start flex flex-col justify-between">
+        <img src="assets/Screenshot 2025-04-10 at 7.39.01 PM.png" alt="NM Certificate 3" class="h-20 w-auto mx-auto mb-2">
+        <h3 class="text-lg font-bold text-center text-white">Robotic Process Automation</h3>
+        <p class="text-sm text-gray-300 text-center">UiPath Community</p>
+        <p class="text-xs text-gray-400 text-center mt-1">
+        Completed a government-sponsored automation program, showcasing initiative and commitment to career growth.
+        </p>
+        <p class="text-blue-500 text-xs text-center mt-2">
+          <a href="assets/NM_Certificate (2).pdf" target="_blank">View Certificate</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+          
+
+          
 
         <section id="experience" class="py-20 bg-gradient-to-b from-charcoal to-black">
             <div class="container mx-auto px-6">
@@ -425,7 +444,31 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Before </body> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+          loop: true,
+          centeredSlides: true,
+          grabCursor: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 1.3
+            },
+            1024: {
+              slidesPerView: 1.5
+            }
+          }
+        });
+      </script>
+      
 </body>
 </html>
 <script>

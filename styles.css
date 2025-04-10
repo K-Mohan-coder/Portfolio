@@ -258,3 +258,18 @@
         width: 75%;
     }
     
+    /* Hide scrollbar for all horizontal scrolls */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .p-6-dark{
+        padding: 1.5rem;
+        background-color: #757677;
+        border-bottom-right-radius: 23px;
+
+    }

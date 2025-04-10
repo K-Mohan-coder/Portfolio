@@ -121,7 +121,7 @@ emailjs.init("ZsUORlPyZTY-i7Ig0");
 
 // Button submission
 const submitButton = document.getElementById('submit-button');
-debugger
+
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     
