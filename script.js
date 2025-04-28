@@ -339,3 +339,11 @@ submitButton.addEventListener('click', (e) => {
     gtag('config', 'UA-XXXXXXXX-X');
 });
 
+const carousel = document.getElementById('certification-carousel');
+const cards = carousel.children;
+
+// Clone all cards and append them at the end
+Array.from(cards).forEach(card => {
+  const clone = card.cloneNode(true);
+  carousel.appendChild(clone);
+});

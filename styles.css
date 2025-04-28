@@ -273,3 +273,12 @@
         border-bottom-right-radius: 23px;
 
     }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      #certification-carousel {
+        animation: scroll 15s linear infinite;
+      }
+      
