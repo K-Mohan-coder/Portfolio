@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan-wx9TQekx13q5XMCXYgVcS1UdAQ5i2W.jpeg" type="image/x-icon">    
-    <title>Mohan K - Software Developer Portfolio </title>
+    <title>Mohan K - Software Developer Portfolio</title>
     <meta name="description" content="Mohan K is a software developer transforming ideas into seamless digital solutions. Explore his projects, skills, and experience.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Inside <head> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -30,22 +28,63 @@
                         'playfair': ['"Playfair Display"', 'serif'],
                         'roboto': ['Roboto', 'sans-serif'],
                     },
+                    animation: {
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)' },
+                            '100%': { boxShadow: '0 0 40px rgba(255, 215, 0, 0.8)' }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
                 },
             },
         }
     </script>
+    <style>
+        .featured-cert-bg {
+    background: linear-gradient(135deg, #1e3a8a 0%, #059669 50%, #0d9488 100%);
+    position: relative;
+    overflow: hidden;
+}
+.featured-cert-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+.certificate-glow {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+.certificate-glow:hover {
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    transform: scale(1.02);
+}
+    </style>
 </head>
 <body class="bg-black text-white font-roboto">
     <div id="custom-cursor"></div>
+    
     <header>
         <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 transition-all duration-300">
-            <div  class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
                 <a href="#home" class="text-2xl font-playfair font-bold text-gold">M</a>
                 <ul class="hidden md:flex space-x-6">
                     <li><a href="#about" class="hover:text-gold transition-colors">About</a></li>
                     <li><a href="#skills" class="hover:text-gold transition-colors">Skills</a></li>
                     <li><a href="#projects" class="hover:text-gold transition-colors">Projects</a></li>
-                    <li><a href="#certifications" class="hover:text-gold transition-colors">Certifications</a></li>
+                    <li><a href="#featured-certification" class="hover:text-gold transition-colors font-bold">🏆 Featured Cert</a></li>
+                    <li><a href="#certifications" class="hover:text-gold transition-colors">Other Certs</a></li>
                     <li><a href="#experience" class="hover:text-gold transition-colors">Experience</a></li>
                     <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
                 </ul>
@@ -56,12 +95,14 @@
                 </button>
             </div>
         </nav>
+        
         <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-black bg-opacity-90 z-40">
             <ul class="py-4 px-6 space-y-4">
                 <li><a href="#about" class="block hover:text-gold transition-colors">About</a></li>
                 <li><a href="#skills" class="block hover:text-gold transition-colors">Skills</a></li>
                 <li><a href="#projects" class="block hover:text-gold transition-colors">Projects</a></li>
-                <li><a href="#certifications" class="block hover:text-gold transition-colors">Certifications</a></li>
+                <li><a href="#featured-certification" class="block hover:text-gold transition-colors font-bold">🏆 Featured Certification</a></li>
+                <li><a href="#certifications" class="block hover:text-gold transition-colors">Other Certifications</a></li>
                 <li><a href="#experience" class="block hover:text-gold transition-colors">Experience</a></li>
                 <li><a href="#contact" class="block hover:text-gold transition-colors">Contact</a></li>
             </ul>
@@ -69,51 +110,38 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-06-14%20at%203.13.13%20PM-UiTbQHXNpFh978mINbdjuqpnTGcB2t.jpeg" alt="Artistic portrait of Mohan" class="w-full h-full object-cover opacity-50">
             </div>
             <div id="title-card" class="text-center z-10">
                 <h1 class="text-6xl md:text-8xl font-playfair font-bold mb-4 glowing-text">Mohan K</h1>
-                <p class="text-xl md:text-2xl text-silver mb-10">Tech Enthusiact</p>
-                <a href="#contact" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-80 transition-all duration-300">Get in Touch</a><br><br><br>
+                <p class="text-xl md:text-2xl text-silver mb-10">Tech Enthusiast</p>
+                <a href="#contact" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-80 transition-all duration-300">Get in Touch</a>
+                <br><br><br>
                 <div class="flex justify-center space-x-6">
-                    <!-- Email -->
                     <a href="mailto:kmohan17official@gmail.com" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-envelope fa-2x"></i>
                     </a>
-                
-                    <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/mohank-softwaredeveloper" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin fa-2x"></i>
                     </a>
-                
-                    <!-- GitHub -->
                     <a href="https://github.com/K-Mohan-coder" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github fa-2x"></i>
                     </a>
-                
-                    <!-- X (formerly Twitter) -->
                     <a href="https://x.com/K_Mohan_OG" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-x fa-2x"></i>
                     </a>
-                
-                    <!-- Instagram -->
                     <a href="https://www.instagram.com/mohan.k17/" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-instagram fa-2x"></i>
                     </a>
-                
-                    <!-- WhatsApp -->
                     <a href="https://wa.me/9345417734" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp fa-2x"></i>
                     </a>
-                
-                    <!-- Phone -->
                     <a href="tel:+91 9345417734" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-phone fa-2x"></i>
                     </a>
-
-                    <!-- CV Download -->
                     <a href="assets/Mohan_cv.pdf" target="_blank" download title="Download My Resume">
                         <i class="fas fa-file-pdf fa-2x"></i>
                     </a>
@@ -121,271 +149,341 @@
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-charcoal to-black opacity-50"></div>
             <div id="particles-js" class="absolute inset-0"></div>
-            
         </section>
 
+        <!-- About Section -->
         <section id="about" class="py-20 bg-charcoal">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-playfair font-bold mb-12 text-center">About Me</h2>
-                <hr><br>
-                <br>
+                <hr><br><br>
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <div class="md:w-1/3 mb-8 md:mb-0">
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan-wx9TQekx13q5XMCXYgVcS1UdAQ5i2W.jpeg" alt="Mohan K - Software Developer" class="rounded-lg shadow-lg mx-auto w-full h-auto">
                     </div>
                     <div class="md:w-2/3 md:pl-12">
-                        <p class="text-lg mb-6">
-                            Hello! I'm Mohan, a passionate software developer with a knack for turning complex problems into elegant solutions. With a strong foundation in computer science and years of hands-on experience, I specialize in creating robust and scalable applications that make a difference.
-                        </p>
-                        <p class="text-lg mb-6">
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good book on software architecture. I believe in continuous learning and staying ahead of the curve in this ever-evolving tech landscape.
-                        </p>                     
+                        <p class="text-lg mb-6">Hello! I'm Mohan, a passionate software developer with a knack for turning complex problems into elegant solutions. With a strong foundation in computer science and years of hands-on experience, I specialize in creating robust and scalable applications that make a difference.</p>
+                        <p class="text-lg mb-6">When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good book on software architecture. I believe in continuous learning and staying ahead of the curve in this ever-evolving tech landscape.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-   <!-- Skills Section -->
+        <!-- Skills Section -->
         <section id="skills" class="py-20 bg-gradient-to-b from-black to-charcoal">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Skills</h2>
-            <hr><br><br>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Programming Languages -->
-                <div class="skill-category">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Programming Languages</h3>
-                    <div class="space-y-4">
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="JavaScript">JavaScript - 90%</div>
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Skills</h2>
+                <hr><br><br>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Programming Languages -->
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Programming Languages</h3>
+                        <div class="space-y-4">
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="JavaScript">JavaScript - 90%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="Python">Python - 85%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="Java">Java - 80%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="C++">C++ - 75%</div>
+                            </div>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="Python">Python - 85%</div>
+                    </div>
+                    <!-- Web Technologies -->
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Web Technologies</h3>
+                        <div class="space-y-4">
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="React">React - 95%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="Node.js">Node.js - 88%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="HTML/CSS">HTML/CSS - 92%</div>
+                            </div>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="Java">Java - 80%</div>
+                    </div>
+                    <!-- Backend Technologies -->
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Backend Technologies</h3>
+                        <div class="space-y-4">
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="SQL">SQL - 90%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="PHP">PHP - 85%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="MySQL">MySQL - 80%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="MongoDB">MongoDB - 75%</div>
+                            </div>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="C++">C++ - 75%</div>
+                    </div>
+                    <!-- Tools & Frameworks -->
+                    <div class="skill-category">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Tools & Frameworks</h3>
+                        <div class="space-y-4">
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="Git">Git - 90%</div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-bar" data-skill="AWS">AWS - 80%</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Web Technologies -->
-                <div class="skill-category">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Web Technologies</h3>
-                    <div class="space-y-4">
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="React">React - 95%</div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gunmetal">
+            <h2 class="text-4xl font-playfair font-bold mb-12 text-center text-white">Projects</h2>
+            <hr class="border-gray-600 mb-6">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="swiper-slide bg-white rounded-3xl shadow-lg w-[22rem]">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-01-16%20at%201.40.36%20PM-Vk70crsLXFk1eu74xBEzbN6vXMJXyW.jpeg" alt="Home Automation IoT" class="w-full h-60 object-cover rounded-tl-3xl rounded-br-3xl">
+                        <div class="p-6-dark">
+                            <h3 class="text-xl font-bold mb-2">Home Automation using IoT</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li><strong>Technologies:</strong> ESP8266, Relay Modules, Arduino IDE</li>
+                                <li><strong>Role:</strong> Team Lead</li>
+                                <li><strong>Key:</strong> Remote control, sensor integration, TV demo</li>
+                                <li><a href="https://www.linkedin.com/in/mohan-k-a78182312/details/projects/?profileUrn=urn%3Ali%3Afsd_profile%3AACoAAE9nR3wBWX147vctFwc7GfG8H5B9xHrp-x0" target="_blank" class="text-blue-600 underline">View Full Project</a></li>
+                            </ul>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="Node.js">Node.js - 88%</div>
-                        </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="HTML/CSS">HTML/CSS - 92%</div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="swiper-slide bg-white rounded-3xl shadow-lg w-[22rem]">
+                        <img src="assets/Untitled design.png" alt="PayTrack" class="w-full h-60 object-cover rounded-tl-3xl rounded-br-3xl">
+                        <div class="p-6-dark">
+                            <h3 class="text-xl font-bold mb-2">PayTrack – Expense Manager</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li><strong>Technologies:</strong> Kotlin, Firebase, Jetpack Compose</li>
+                                <li><strong>Role:</strong> Team Lead</li>
+                                <li><strong>Key:</strong> Budget alerts, cloud sync, reminders</li>
+                                <li><a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_projectpresentation-collegeviva-paytrack-activity-7305596355769450496-sBMZ" target="_blank" class="text-blue-600 underline">View Full Project</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!-- Backend Technologies -->
-                <div class="skill-category">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Backend Technologies</h3>
-                    <div class="space-y-4">
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="SQL">SQL - 90%</div>
+                <!-- Optional navigation buttons -->
+                <div class="swiper-button-next text-white"></div>
+                <div class="swiper-button-prev text-white"></div>
+            </div>
+        </section>
+
+        <!-- FEATURED CERTIFICATION SECTION - GUVI -->
+<section id="featured-certification" class="py-20 bg-charcoal">
+    <div class="container mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-block bg-gold text-black px-6 py-3 rounded-full font-bold text-lg mb-6">
+                🏆 PREMIER CERTIFICATION 🏆
+            </div>
+            <h2 class="text-4xl font-playfair font-bold mb-4 text-white">
+                Certified Java Full-Stack Developer
+            </h2>
+            <p class="text-xl text-silver">
+                GUVI - IITM Incubated Company
+            </p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gunmetal rounded-2xl p-8 shadow-lg border border-gold border-opacity-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Left Content -->
+                    <div class="space-y-6">
+                        <!-- Company Info -->
+                        <div class="bg-black p-4 rounded-xl border border-gold border-opacity-30">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-gold p-3 rounded-lg">
+                                    <span class="text-black font-bold text-sm">GUVI</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-playfair font-bold text-white">GUVI Geek Network</h3>
+                                    <p class="text-gold text-sm">IITM Incubated • Google Partner</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="PHP">PHP - 85%</div>
+                        
+                        <!-- Course Highlights -->
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-playfair font-bold text-gold">Course Highlights:</h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-gold rounded-full"></div>
+                                    <span class="text-white text-sm">Java Programming & Spring Framework</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-gold rounded-full"></div>
+                                    <span class="text-white text-sm">Database Management & RESTful APIs</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-gold rounded-full"></div>
+                                    <span class="text-white text-sm">Full-Stack Development & Best Practices</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="MySQL">MySQL - 80%</div>
+                        
+                        <!-- Certificate Details -->
+                        <div class="bg-charcoal p-4 rounded-xl">
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="text-gold font-bold">Duration:</p>
+                                    <p class="text-silver">Mar - May 2025</p>
+                                </div>
+                                <div>
+                                    <p class="text-gold font-bold">Certified by:</p>
+                                    <p class="text-white">Arun Prakash M</p>
+                                    <p class="text-silver text-xs">CEO, GUVI</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="MongoDB">MongoDB - 75%</div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="https://v2.zenclass.in/certificateDownload/QDfDLavjNTZ4KZj4" target="_blank" rel="noopener noreferrer" class="bg-gold text-black px-6 py-3 rounded-full font-bold text-center hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center space-x-2">
+                                <i class="fas fa-download"></i>
+                                <span>Download Certificate</span>
+                            </a>
+                            <a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_guvi-activity-7351852429484650498-XaE5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9nR3wBWX147vctFwc7GfG8H5B9xHrp-x0" target="_blank" rel="noopener noreferrer" class="border-2 border-gold text-gold px-6 py-3 rounded-full font-bold text-center hover:bg-gold hover:text-black transition-all duration-300 flex items-center justify-center space-x-2">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn Post</span>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Tools & Frameworks -->
-                <div class="skill-category">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Tools & Frameworks</h3>
-                    <div class="space-y-4">
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="Git">Git - 90%</div>
-                        </div>
-                        <div class="skill-container">
-                            <div class="skill-bar" data-skill="AWS">AWS - 80%</div>
+                    
+                    <!-- Right Content - Certificate Image -->
+                    <div class="flex justify-center">
+                        <div class="relative">
+                            <div class="bg-white p-3 rounded-xl shadow-lg border-2 border-gold border-opacity-30 hover:scale-105 transition-transform duration-300">
+                                <img src="assets/GuviCertification-Java.png" alt="GUVI Java Full-Stack Developer Certificate" class="rounded-lg max-w-full h-auto">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Achievement Stats -->
+        <div class="mt-12 text-center">
+            <div class="inline-flex items-center space-x-6 bg-black px-8 py-4 rounded-full border border-gold border-opacity-20">
+                <div class="text-center">
+                    <div class="text-xl font-playfair font-bold text-gold">IITM</div>
+                    <div class="text-xs text-silver">Incubated</div>
+                </div>
+                <div class="w-px h-8 bg-gold opacity-30"></div>
+                <div class="text-center">
+                    <div class="text-xl font-playfair font-bold text-gold">Google</div>
+                    <div class="text-xs text-silver">Partner</div>
+                </div>
+                <div class="w-px h-8 bg-gold opacity-30"></div>
+                <div class="text-center">
+                    <div class="text-xl font-playfair font-bold text-gold">Certified</div>
+                    <div class="text-xs text-silver">Full-Stack</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Other Certifications Section -->
+        <section id="certifications" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">Other Certifications</h2>
+                <hr class="border-gray-600 mb-10">
+                <!-- Carousel Container -->
+                <div class="overflow-hidden relative">
+                    <div class="flex gap-6 animate-scroll" id="certification-carousel">
+                        <!-- All your existing certification cards -->
+                        <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+                            <img src="assets/fcc.png" alt="freeCodeCamp Certification" class="h-20 w-auto mx-auto mb-2">
+                            <h3 class="text-lg font-bold text-center">Full Stack Web Development</h3>
+                            <p class="text-sm text-gray-300 text-center">freeCodeCamp</p>
+                            <p class="text-xs text-gray-400 text-center mt-1">HTML, CSS, JavaScript, backend projects.</p>
+                            <p class="text-blue-500 text-xs text-center mt-2">
+                                <a href="https://www.freecodecamp.org/certification/fcc7670e56d-a3e6-43cf-af1c-5490509d2e3b/responsive-web-design" target="_blank">View Certificate</a>
+                            </p>
+                        </div>
+                        
+                        <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+                            <img src="assets/skillsoft.png" alt="Skillsoft Certification" class="h-20 w-auto mx-auto mb-2">
+                            <h3 class="text-lg font-bold text-center">API Framework Security</h3>
+                            <p class="text-sm text-gray-300 text-center">SkillSoft</p>
+                            <p class="text-xs text-gray-400 text-center mt-1">Securing APIs & backend integration.</p>
+                            <p class="text-blue-500 text-xs text-center mt-2">
+                                <a href="https://skillsoft.digitalbadges.skillsoft.com/6a1ffbca-3392-4c81-9831-935256bcbf62#acc.jS6Z9wGK" target="_blank">View Certificate</a>
+                            </p>
+                        </div>
+                        
+                        <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+                            <img src="assets/tcsdm.png" alt="TCS iON Certification" class="h-20 w-auto mx-auto mb-2">
+                            <h3 class="text-lg font-bold text-center">Master Data Management</h3>
+                            <p class="text-sm text-gray-300 text-center">TCS iON</p>
+                            <p class="text-xs text-gray-400 text-center mt-1">Data consistency & collaboration skills.</p>
+                            <p class="text-blue-500 text-xs text-center mt-2">
+                                <a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_master-data-management-issuer-tcs-ion-activity-7283824085556424704-3fmm?utm_source=share&utm_medium=member_desktop" target="_blank">View Certificate</a>
+                            </p>
+                        </div>
+                        
+                        <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+                            <img src="assets/Screenshot 2025-04-10 at 7.39.01 PM.png" alt="NM Certificate 1" class="h-20 w-auto mx-auto mb-2">
+                            <h3 class="text-lg font-bold text-center">Communication Assessment</h3>
+                            <p class="text-sm text-gray-300 text-center">CAMBRIDGE</p>
+                            <p class="text-xs text-gray-400 text-center mt-1">Overview of English Language Communication</p>
+                            <p class="text-blue-500 text-xs text-center mt-2">
+                                <a href="assets/NM_Certificate.pdf" target="_blank">View Certificate</a>
+                            </p>
+                        </div>
+                        
+                        <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+                            <img src="assets/Screenshot 2025-04-10 at 7.42.32 PM.png" alt="NM Certificate 2" class="h-20 w-auto mx-auto mb-2">
+                            <h3 class="text-lg font-bold text-center">Fundamentals of Coding & Cloud</h3>
+                            <p class="text-sm text-gray-300 text-center">Smart Internz</p>
+                            <p class="text-xs text-gray-400 text-center mt-1">Completed a government-sponsored tech program, demonstrating initiative and commitment to career advancement.</p>
+                            <p class="text-blue-500 text-xs text-center mt-2">
+                                <a href="assets/NM_Certificate (1).pdf" target="_blank">View Certificate</a>
+                            </p>
+                        </div>
+                        
+                        <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+                            <img src="assets/Screenshot 2025-04-10 at 7.39.01 PM.png" alt="NM Certificate 3" class="h-20 w-auto mx-auto mb-2">
+                            <h3 class="text-lg font-bold text-center">Robotic Process Automation</h3>
+                            <p class="text-sm text-gray-300 text-center">UiPath Community</p>
+                            <p class="text-xs text-gray-400 text-center mt-1">Completed a government-sponsored automation program, showcasing initiative and commitment to career growth.</p>
+                            <p class="text-blue-500 text-xs text-center mt-2">
+                                <a href="assets/NM_Certificate (2).pdf" target="_blank">View Certificate</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="projects" class="py-20 bg-gunmetal">
-            <!-- <div class="container mx-auto px-6"> -->
-              <h2 class="text-4xl font-playfair font-bold mb-12 text-center text-white">Projects</h2>
-              <hr class="border-gray-600 mb-6">
-          
-              <!-- Swiper -->
-              <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-          
-                  <!-- Project 1 -->
-                  <div class="swiper-slide bg-white rounded-3xl shadow-lg w-[22rem]">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-01-16%20at%201.40.36%20PM-Vk70crsLXFk1eu74xBEzbN6vXMJXyW.jpeg" 
-                         alt="Home Automation IoT"
-                         class="w-full h-60 object-cover rounded-tl-3xl rounded-br-3xl">
-                    <div class="p-6-dark">
-                      <h3 class="text-xl font-bold mb-2">Home Automation using IoT</h3>
-                      <ul class="text-sm text-gray-700 space-y-1">
-                        <li><strong>Technologies:</strong> ESP8266, Relay Modules, Arduino IDE</li>
-                        <li><strong>Role:</strong> Team Lead</li>
-                        <li><strong>Key:</strong> Remote control, sensor integration, TV demo</li>
-                        <li><a href="https://www.linkedin.com/in/mohan-k-a78182312/details/projects/?profileUrn=urn%3Ali%3Afsd_profile%3AACoAAE9nR3wBWX147vctFwc7GfG8H5B9xHrp-x0" target="_blank" class="text-blue-600 underline">View Full Project</a></li>
-                      </ul>
-                    </div>
-                  </div>
-          
-                  <!-- Project 2 -->
-                  <div class="swiper-slide bg-white rounded-3xl shadow-lg w-[22rem]">
-                    <img src="assets/Untitled design.png" 
-                         alt="PayTrack"
-                         class="w-full h-60 object-cover rounded-tl-3xl rounded-br-3xl">
-                    <div class="p-6-dark">
-                      <h3 class="text-xl font-bold mb-2">PayTrack – Expense Manager</h3>
-                      <ul class="text-sm text-gray-700 space-y-1">
-                        <li><strong>Technologies:</strong> Kotlin, Firebase, Jetpack Compose</li>
-                        <li><strong>Role:</strong> Team Lead</li>
-                        <li><strong>Key:</strong> Budget alerts, cloud sync, reminders</li>
-                        <li><a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_projectpresentation-collegeviva-paytrack-activity-7305596355769450496-sBMZ" target="_blank" class="text-blue-600 underline">View Full Project</a></li>
-                      </ul>
-                    </div>
-                  </div>
-          
-                  <!-- Add More Projects -->
-                  <!-- Just copy and paste swiper-slide blocks -->
-          
-                </div>
-          
-                <!-- Optional navigation buttons -->
-                <div class="swiper-button-next text-white"></div>
-                <div class="swiper-button-prev text-white"></div>
-              </div>
-            </div>
-          </section>
-
-          <section id="certifications" class="py-20">
-            <div class="container mx-auto px-6">
-              <h2 class="text-4xl font-bold mb-12 text-center">Certifications</h2>
-              <hr class="border-gray-600 mb-10">
-          
-              <!-- Carousel Container -->
-              <div class="overflow-hidden relative">
-                <div class="flex gap-6 animate-scroll" id="certification-carousel">
-                  <!-- All your 6 Certification Cards are here (no repetition) -->
-          
-                  <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
-                    <img src="assets/fcc.png" alt="freeCodeCamp Certification" class="h-20 w-auto mx-auto mb-2">
-                    <h3 class="text-lg font-bold text-center">Full Stack Web Development</h3>
-                    <p class="text-sm text-gray-300 text-center">freeCodeCamp</p>
-                    <p class="text-xs text-gray-400 text-center mt-1">HTML, CSS, JavaScript, backend projects.</p>
-                    <p class="text-blue-500 text-xs text-center mt-2">
-                      <a href="https://www.freecodecamp.org/certification/fcc7670e56d-a3e6-43cf-af1c-5490509d2e3b/responsive-web-design" target="_blank">View Certificate</a>
-                    </p>
-                  </div>
-          
-                  <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
-                    <img src="assets/skillsoft.png" alt="Skillsoft Certification" class="h-20 w-auto mx-auto mb-2">
-                    <h3 class="text-lg font-bold text-center">API Framework Security</h3>
-                    <p class="text-sm text-gray-300 text-center">SkillSoft</p>
-                    <p class="text-xs text-gray-400 text-center mt-1">Securing APIs & backend integration.</p>
-                    <p class="text-blue-500 text-xs text-center mt-2">
-                      <a href="https://skillsoft.digitalbadges.skillsoft.com/6a1ffbca-3392-4c81-9831-935256bcbf62#acc.jS6Z9wGK" target="_blank">View Certificate</a>
-                    </p>
-                  </div>
-          
-                  <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
-                    <img src="assets/tcsdm.png" alt="TCS iON Certification" class="h-20 w-auto mx-auto mb-2">
-                    <h3 class="text-lg font-bold text-center">Master Data Management</h3>
-                    <p class="text-sm text-gray-300 text-center">TCS iON</p>
-                    <p class="text-xs text-gray-400 text-center mt-1">Data consistency & collaboration skills.</p>
-                    <p class="text-blue-500 text-xs text-center mt-2">
-                      <a href="https://www.linkedin.com/posts/mohank-softwaredeveloper_master-data-management-issuer-tcs-ion-activity-7283824085556424704-3fmm?utm_source=share&utm_medium=member_desktop" target="_blank">View Certificate</a>
-                    </p>
-                  </div>
-          
-                  <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
-                    <img src="assets/Screenshot 2025-04-10 at 7.39.01 PM.png" alt="NM Certificate 1" class="h-20 w-auto mx-auto mb-2">
-                    <h3 class="text-lg font-bold text-center">Communication Assessment</h3>
-                    <p class="text-sm text-gray-300 text-center">CAMBRIDGE</p>
-                    <p class="text-xs text-gray-400 text-center mt-1">Overview of English Language Communication</p>
-                    <p class="text-blue-500 text-xs text-center mt-2">
-                      <a href="assets/NM_Certificate.pdf" target="_blank">View Certificate</a>
-                    </p>
-                  </div>
-          
-                  <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
-                    <img src="assets/Screenshot 2025-04-10 at 7.42.32 PM.png" alt="NM Certificate 2" class="h-20 w-auto mx-auto mb-2">
-                    <h3 class="text-lg font-bold text-center">Fundamentals of Coding & Cloud</h3>
-                    <p class="text-sm text-gray-300 text-center">Smart Internz</p>
-                    <p class="text-xs text-gray-400 text-center mt-1">
-                      Completed a government-sponsored<br>tech program, demonstrating initiative<br>and commitment to career advancement.
-                    </p>
-                    <p class="text-blue-500 text-xs text-center mt-2">
-                      <a href="assets/NM_Certificate (1).pdf" target="_blank">View Certificate</a>
-                    </p>
-                  </div>
-          
-                  <div class="min-w-[250px] bg-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
-                    <img src="assets/Screenshot 2025-04-10 at 7.39.01 PM.png" alt="NM Certificate 3" class="h-20 w-auto mx-auto mb-2">
-                    <h3 class="text-lg font-bold text-center">Robotic Process Automation</h3>
-                    <p class="text-sm text-gray-300 text-center">UiPath Community</p>
-                    <p class="text-xs text-gray-400 text-center mt-1">
-                      Completed a government-sponsored<br>automation program, showcasing initiative<br>and commitment to career growth.
-                    </p>
-                    <p class="text-blue-500 text-xs text-center mt-2">
-                      <a href="assets/NM_Certificate (2).pdf" target="_blank">View Certificate</a>
-                    </p>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-          </section>
-          
-        
-
-<!-- Tailwind Custom Animation -->
-<style>
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  animation: marquee 2s linear infinite;
-}
-</style>
-                
-    <section id="experience" class="py-20 bg-gradient-to-b from-charcoal to-black">
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-gradient-to-b from-charcoal to-black">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Bridging Knowledge and Innovation</h2>
-                <hr><br>
-                <br>
+                <hr><br><br>
                 <div class="timeline">
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 class="text-2xl font-bold mb-2">Senior Software Engineer</h3>
-                            <p class="text-gold mb-2">TechCorp Inc. | 2020 - Present</p>
-                            <p class="text-gray-300">Led the development of a microservices-based e-commerce platform, improving scalability and reducing downtime by 40%.</p>
-                        </div>
-                    </div> -->
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3 class="text-2xl font-bold mb-2">Vision for the Future</h3>
                             <p class="text-gold mb-2">Aiming for Excellence | A Long-Term Commitment</p>
-                            <p class="text-gray-300">
-                                I aim to build a long-term relationship with a forward-thinking company where I can contribute, grow, and create meaningful impact through innovation and teamwork.</p>
+                            <p class="text-gray-300">I aim to build a long-term relationship with a forward-thinking company where I can contribute, grow, and create meaningful impact through innovation and teamwork.</p>
                         </div>
                     </div>
-                    
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3 class="text-2xl font-bold mb-2">Junior Developer</h3>
@@ -407,16 +505,15 @@
                             <p class="text-gray-300">Scored 92% in board exams.</p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="py-20 bg-gunmetal">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Get in Touch</h2>
-                <hr><br>
-                <br>
+                <hr><br><br>
                 <form id="contact-form" class="max-w-lg mx-auto">
                     <div class="mb-6">
                         <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
@@ -443,67 +540,63 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- Before </body> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <script>
         const swiper = new Swiper(".mySwiper", {
-          slidesPerView: 1.2,
-          spaceBetween: 20,
-          loop: true,
-          centeredSlides: true,
-          grabCursor: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-          },
-          breakpoints: {
-            768: {
-              slidesPerView: 1.3
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            loop: true,
+            centeredSlides: true,
+            grabCursor: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
             },
-            1024: {
-              slidesPerView: 1.5
+            breakpoints: {
+                768: {
+                    slidesPerView: 1.3
+                },
+                1024: {
+                    slidesPerView: 1.5
+                }
             }
-          }
         });
-      </script>
-      
+    </script>
+    
+    <script>
+        // Initialize EmailJS with your user ID
+        emailjs.init("ZsUORlPyZTY-i7Ig0");
+
+        // Function to send message on button click
+        function clientresponse() {
+            const contactForm = document.getElementById('contact-form');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Check if any field is empty
+            if (!name || !email || !message) {
+                alert("Please fill out all fields before submitting!");
+                return; // Stop the function if any field is empty
+            }
+
+            // Send form data to your email using EmailJS
+            emailjs.sendForm('service_n41ltbe', 'template_1sn0z3c', contactForm)
+                .then((response) => {
+                    // Display success message
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();  // Reset form fields after successful submission
+                    // Refresh the page to simulate a fresh start
+                    location.reload();  // This reloads the page
+                    // Scroll the page to the top explicitly
+                    window.scrollTo(0, 0);  // Scroll to the top of the page after reload
+                })
+                .catch((error) => {
+                    // Display error message if there's an issue
+                    alert('Sorry, there was an error sending your message. Please try again later.');
+                });
+        }
+    </script>
 </body>
 </html>
-<script>
-    // Initialize EmailJS with your user ID
-emailjs.init("ZsUORlPyZTY-i7Ig0");
-
-// Function to send message on button click
-function clientresponse() {
-    const contactForm = document.getElementById('contact-form');
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Check if any field is empty
-    if (!name || !email || !message) {
-        alert("Please fill out all fields before submitting!");
-        return; // Stop the function if any field is empty
-    }
-
-    // Send form data to your email using EmailJS
-    emailjs.sendForm('service_n41ltbe', 'template_1sn0z3c', contactForm)
-        .then((response) => {
-            // Display success message
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();  // Reset form fields after successful submission
-
-            // Refresh the page to simulate a fresh start
-            location.reload();  // This reloads the page
-
-            // Scroll the page to the top explicitly
-            window.scrollTo(0, 0);  // Scroll to the top of the page after reload
-        })
-        .catch((error) => {
-            // Display error message if there's an issue
-            alert('Sorry, there was an error sending your message. Please try again later.');
-        });
-}
-
-</script>
